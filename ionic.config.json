@@ -1,0 +1,7 @@
+{
+  "name": "Linguotodo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

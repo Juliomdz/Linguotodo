@@ -1,0 +1,86 @@
+
+    <ion-content id="body" color="tertiary">
+      
+      <ion-card style="background-color: white;">
+
+      <ion-card  id="header-card"></ion-card>
+
+      <ion-card id="content-main-card" *ngIf="spinnerMostrandose == false">
+        <ion-grid id="main-grid">
+          <ion-col class="col-main-grid">
+            <ion-row class="row-main-grid">
+              <img class="item-img" id="item1" src="../../assets/buttons/animales/leon.jpg" width="200" height="140" (click)="itemClickeado(1)">
+              <img class="item-img2" id="item2" src="../../assets/buttons/animales/perro.PNG" width="200" height="140" (click)="itemClickeado(2)">
+            </ion-row>   
+          </ion-col>
+          <ion-col class="col-main-grid">
+            <ion-row class="row-main-grid">
+              <img class="item-img" id="item3" src="../../assets/buttons/animales/gato.jpg" width="200" height="140" (click)="itemClickeado(3)">
+              <img class="item-img2" id="item4" src="../../assets/buttons/animales/elefante.PNG" width="200" height="140" (click)="itemClickeado(4)">
+            </ion-row>   
+          </ion-col>
+          <ion-col class="col-main-grid">
+            <ion-row class="row-main-grid">
+              <img class="item-img" id="item5" src="../../assets/buttons/animales/hormiga.jpg" width="200" height="140" (click)="itemClickeado(5)">
+              <img class="item-img2" id="item6" src="../../assets/buttons/animales/pajaro.jpg" width="200" height="140" (click)="itemClickeado(6)">
+            </ion-row>   
+          </ion-col>
+        </ion-grid>
+      </ion-card>
+
+      <ion-card id="content-main-card2" *ngIf="spinnerMostrandose == false">
+        <ion-grid id="main-grid2">
+
+          <ion-col class="col-main-grid2">
+            <ion-row class="fila">
+              <ion-row class="celda" id="pos1"><img class="item-invertido" id="item1-2" src="../../assets/buttons/animales/leon.jpg" width="100" height="140" (click)="itemClickeado(1)"></ion-row>
+              <ion-row class="celda"><img class="item-invertido" id="item2-2" src="../../assets/buttons/animales/perro.PNG" width="100" height="140" (click)="itemClickeado(2)"></ion-row>
+              <ion-row class="celda"><img class="item-invertido" id="item3-2" src="../../assets/buttons/animales/gato.jpg" width="100" height="140" (click)="itemClickeado(3)"></ion-row>
+            </ion-row>
+          </ion-col>
+
+          <ion-col class="col-main-grid2">
+            <ion-row class="fila">
+              <ion-row class="celda" id="pos2"><img class="item-invertido" id="item4-2" src="../../assets/buttons/animales/elefante.PNG" width="100" height="140" (click)="itemClickeado(4)"></ion-row>
+              <ion-row class="celda"><img class="item-invertido" id="item5-2" src="../../assets/buttons/animales/hormiga.jpg" width="100" height="140" (click)="itemClickeado(5)"></ion-row>
+              <ion-row class="celda"><img class="item-invertido" id="item6-2" src="../../assets/buttons/animales/pajaro.jpg" width="100" height="140" (click)="itemClickeado(6)"></ion-row>
+            </ion-row>
+          </ion-col>
+
+        </ion-grid>
+      </ion-card>
+
+      </ion-card>
+
+      <ion-row *ngIf="spinnerMostrandose == true" class="item-spinner">
+        <ion-col>
+          <ion-spinner name="crescent" id="loader-spinner" color="light"></ion-spinner>
+        </ion-col>
+      </ion-row>
+
+    </ion-content>
+      
+<!-- fab placed to the bottom start -->
+<ion-fab class="redireccionador" vertical="bottom" horizontal="start" slot="fixed" (click)="logOut()">
+  <ion-fab-button color="light">
+    <ion-icon name="arrow-back-circle"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+<ion-fab vertical="top" horizontal="start" edge slot="fixed" id="theme-selected">
+  <ion-fab-button color="light" id="theme-showed" width="200" height="200"><img src="../../assets/buttons/temas/animales.png" width="100" height="50"></ion-fab-button>
+  <ion-fab-list side="end">
+    <ion-fab-button color="light" id="theme-animales" (click)="actualizarTema('animales')"><img src="../../assets/buttons/temas/animales.png" width="30" height="30"></ion-fab-button>
+    <ion-fab-button color="light" id="theme-colores" (click)="actualizarTema('colores')"><img src="../../assets/buttons/temas/colores.png" width="30" height="30"></ion-fab-button>
+    <ion-fab-button color="light" id="theme-numeros" (click)="actualizarTema('numeros')"><img src="../../assets/buttons/temas/numeros.png" width="30" height="30"></ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
+<ion-fab vertical="top" horizontal="end" edge slot="fixed" id="language-selected">
+  <ion-fab-button color="light" id="language-showed"><img src="../../assets/buttons/banderas/spain.png" width="100" height="50"></ion-fab-button>
+  <ion-fab-list side="start">
+    <ion-fab-button color="light" id="language-espanol" (click)="actualizarLenguaje('español')"><img src="../../assets/buttons/banderas/spain.png" width="100" height="50"></ion-fab-button>
+    <ion-fab-button color="light" id="language-portugues" (click)="actualizarLenguaje('portugues')"><img src="../../assets/buttons/banderas/brazil.png" width="100" height="50"></ion-fab-button>
+    <ion-fab-button color="light" id="language-ingles" (click)="actualizarLenguaje('ingles')"><img src="../../assets/buttons/banderas/England.png" width="100" height="50"></ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
